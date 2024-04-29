@@ -1,8 +1,4 @@
-import'package:flutter/material.dart';
-
-void main() {
-  runApp(MyApp());
-}
+import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
   @override
@@ -11,41 +7,40 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Welcome to Flutter',
       home: Scaffold(
-        body: Stack( // Use Stack for image superposition
+        body: Stack(
           children: [
-            // Background image
-            Image.asset(
-              'assets/bg_mainscreen.png',
-              fit: BoxFit.contain, // Adjust as needed (cover, fill, etc.)
+            // Background image that fills the entire screen
+            SizedBox.expand(
+              child: Image.asset(
+                'assets/bg_mainscreen.png',
+                fit: BoxFit.cover,
+              ),
             ),
-            // Draggable image (replace 'assets/draggable_image.png' with your path)
+            // Draggable image
             Positioned(
-              top: 50.0, // Adjust positioning as desired
-              left: 50.0, // Adjust positioning as desired
+              top: 50.0,
+              left: 50.0,
               child: Draggable(
                 child: Image.asset(
-                  'assets/chick cupcakes_3D.png',
-                  width: 500.0, // Adjust size as needed
-                  height: 500.0, // Adjust size as needed
+                  'assets/chick cupcakes_3D.png', // Updated the path
+                  width: 300.0,
+                  height: 300.0,
                 ),
                 childWhenDragging: SizedBox(
-                  // Optional visual feedback during drag
-                  width:1000.0,
-                  height: 1000.0,
-                  child: Icon(
-                    Icons.image,
-                    color: Colors.grey,
-                    size: 100.0,
+                  width: 300.0,
+                  height: 700.0,
+                  child: Image.asset(
+                    'assets/brandmark-design (4).png',
+                    
+                    
                   ),
                 ),
                 feedback: Container(
-                  // Optional visual feedback during drag (optional)
-                  width: 300.0,
-                  height: 300.0,
-                  child: Icon(
-                    Icons.image,
-                    color: Color.fromARGB(255, 243, 33, 58),
-                    size: 50.0,
+                  width: 0.0,
+                  height: 0.0,
+                  child: Image.asset(
+                    'assets/images/chick_cupcakes_3D.png', // Updated the path
+                    fit: BoxFit.cover,
                   ),
                 ),
                 onDragEnd: (details) {
@@ -53,29 +48,29 @@ class MyApp extends StatelessWidget {
                 },
               ),
             ),
-            // Container with transparent background and content (moved up)
+            // Container with transparent background and content
             Positioned(
-              left: 16.0, // Adjust positioning as desired
-              right: 16.0, // Align to edges horizontally
-              top: MediaQuery.of(context).size.height - 240.0, // Position near bottom
+              left: 16.0,
+              right: 16.0,
+              bottom: 40.0,
               child: Container(
-                height: 200.0, // Adjust container height
-                width: double.infinity, // Match parent width for full width
+                height: 200.0,
+                width: double.infinity,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(16.0), // Add rounded corners
+                  borderRadius: BorderRadius.circular(16.0),
                   gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
                     colors: [
-                      Color.fromARGB(0, 94, 82, 82).withOpacity(0.28),
-                      Color.fromARGB(88, 102, 95, 95),
+                      Color.fromARGB(255, 217, 30, 195),
+                      Color.fromARGB(255, 47, 144, 209),
                     ],
                   ),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.all(16.0), // Add padding
+                  padding: const EdgeInsets.all(16.0),
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween, // Align content vertically
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
                         'Feeling Snackish Today?',
@@ -85,7 +80,7 @@ class MyApp extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        'Explore Giorgio most popular snack selection and get instantly happy',
+                        'Explore Giorgio\'s most popular snack selection and get instantly happy',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 16.0,
@@ -102,7 +97,18 @@ class MyApp extends StatelessWidget {
                         onPressed: () {
                           // Handle button press
                         },
-                        child: Text('Order Now'),
+                        child: Text('Explore Snacks'),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.transparent,
+                          elevation: 0,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(16.0),
+                          ),
+                          side: BorderSide(
+                            color: Colors.white,
+                            width: 2.0,
+                          ),
+                        ),
                       ),
                     ],
                   ),
@@ -115,3 +121,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
