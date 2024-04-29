@@ -21,11 +21,6 @@ class MyApp extends StatelessWidget {
               top: 50.0,
               left: 50.0,
               child: Draggable(
-                child: Image.asset(
-                  'assets/chick cupcakes_3D.png', // Updated the path
-                  width: 300.0,
-                  height: 300.0,
-                ),
                 childWhenDragging: SizedBox(
                   width: 300.0,
                   height: 700.0,
@@ -35,7 +30,7 @@ class MyApp extends StatelessWidget {
                     
                   ),
                 ),
-                feedback: Container(
+                feedback: SizedBox(
                   width: 0.0,
                   height: 0.0,
                   child: Image.asset(
@@ -46,6 +41,11 @@ class MyApp extends StatelessWidget {
                 onDragEnd: (details) {
                   // Handle drag completion (optional)
                 },
+                child: Image.asset(
+                  'assets/chick cupcakes_3D.png', // Updated the path
+                  width: 300.0,
+                  height: 300.0,
+                ),
               ),
             ),
             // Container with transparent background and content
@@ -97,7 +97,6 @@ class MyApp extends StatelessWidget {
                         onPressed: () {
                           // Handle button press
                         },
-                        child: Text('Explore Snacks'),
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.transparent,
                           elevation: 0,
@@ -109,6 +108,7 @@ class MyApp extends StatelessWidget {
                             width: 2.0,
                           ),
                         ),
+                        child: Text('Explore Snacks'),
                       ),
                     ],
                   ),

@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Welcome to Flutter',
       home: Scaffold(
-        body: Container(
+        body: SizedBox(
           width: double.infinity,
           height: double.infinity,
           child: Image(

@@ -34,8 +34,8 @@ class ClothingHomePage extends StatelessWidget {
           // Aici puteți adăuga acțiuni pentru butonul de floating
           print('Butonul a fost apăsat!');
         },
-        child: Icon(Icons.add),
         backgroundColor: Colors.yellow,
+        child: Icon(Icons.add),
       ),
     );
   }

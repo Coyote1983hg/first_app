@@ -44,10 +44,10 @@ class FirstScreen extends StatelessWidget {
             context,
             MaterialPageRoute(builder: (context) => const SecondScreen()),
           ),
-          child: const Text('Click Me'),
           style: ElevatedButton.styleFrom(
             backgroundColor: Color.fromARGB(255, 113, 173, 193), // Darker blue using RGB
           ),
+          child: const Text('Click Me'),
         ),
       ),
     );
@@ -70,10 +70,10 @@ class SecondScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 40.0, vertical: 40.0),
         child: ElevatedButton(
           onPressed: () => Navigator.pop(context),
-          child: const Text('Click Me'),
           style: ElevatedButton.styleFrom(
             backgroundColor: Color.fromARGB(255, 212, 219, 77), // Darker blue using RGB
           ),
+          child: const Text('Click Me'),
         ),
       ),
     );
