@@ -2,9 +2,6 @@
 
 import 'package:flutter/material.dart';
 
-
-
-
 class Product {
   final String name;
   final String description;
@@ -14,9 +11,9 @@ class Product {
   Product(this.name, this.description, this.price, this.imageUrl);
 }
 
-
 class ProductListScreen extends StatefulWidget {
   @override
+  // ignore: library_private_types_in_public_api
   _ProductListScreenState createState() => _ProductListScreenState();
 }
 
@@ -59,7 +56,6 @@ class _ProductListScreenState extends State<ProductListScreen> {
     );
   }
 }
-
 
 class ProductDetailsScreen extends StatelessWidget {
   final Product product;
