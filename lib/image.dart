@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
                   height: 300.0,
                   child: Icon(
                     Icons.image,
-                    color: Colors.blue,
+                    color: Color.fromARGB(255, 243, 33, 58),
                     size: 50.0,
                   ),
                 ),
